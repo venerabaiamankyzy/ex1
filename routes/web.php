@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', function (){
+    return view('homepage'); 
+})->name('homepage');
+
+Route::get('/comics', function (){
+  // prendo l'array di dati dalla cartella config
+  $comics = config('comicsdb.comics');
+  $pagename = 'Comics';
+  return view('comics', compact('comics', 'pagename'));
+})->name('comics');
+
+Route::get('/detail/{index}', function ($index) {
+  // Mi prendo l'array di dati dalla cartella config
+  $comics =  config('comicsdb.comics');
+  $comic = $comics[$index];
+  $comic_key = $index;
+  // Metto l'index (uno dei comic) nella variabile che mi creo
+  return view('detail', compact('comic', 'comic_key'));
+})->name('detail');
