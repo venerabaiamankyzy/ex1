@@ -1,9 +1,220 @@
 @import "~bootstrap/scss/bootstrap";
-
-.jumbotron {
-    min-height: 100vh;
+body {
+    max-height: 100vh;
 }
 
-img {
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// header
+
+.header-top {
+    background-color: hsl(208.67deg 100% 48.82%);
+    color: white;
+
+    font-size: 0.6rem;
+
+    text-align: end;
+
+    span {
+        margin: 0 20px;
+    }
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    img {
+        width: 60px;
+    }
+    .header-nav {
+        display: flex;
+        gap: 30px;
+
+        list-style: none;
+
+        .nav-link {
+            font-weight: 500;
+        }
+    }
+
+    .search {
+        border-bottom: 2px solid hsl(208.67deg 100% 48.82%);
+
+        small {
+            margin-right: 5px;
+        }
+    }
+}
+
+// jumbotron
+.jumbotron-img img {
+    width: 100%;
+
+    min-height: 350px;
     max-height: 150px;
+
+    object-fit: cover;
+    object-position: top;
+}
+
+// label current card
+.label-card {
+    span {
+        position: absolute;
+        top: 438px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: hsl(209deg 100% 49%);
+        color: white;
+        padding: 8px 14px;
+    }
+}
+
+// cards
+.img-card {
+    width: 180px;
+    height: 180px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: whitesmoke;
+    }
+}
+.card-button {
+    text-align: center;
+    button {
+        border: 1px solid hsl(209deg 100% 49%);
+        background-color: hsl(209deg 100% 49%);
+        font-size: 0.8rem;
+        color: white;
+        padding: 5px 30px;
+
+        margin-top: 50px;
+    }
+}
+
+// main nav
+.main-nav {
+    background-color: hsl(208.67deg 100% 48.82%);
+    padding: 30px 0;
+
+    .icon-main-nav {
+        opacity: 0.7;
+        img {
+            width: 50px;
+        }
+        span {
+            font-size: 0.8rem;
+            padding-left: 10px;
+            color: whitesmoke;
+        }
+    }
+}
+
+// footer
+footer {
+    margin-top: auto;
+}
+.footer-top {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background-image: url(../../public/images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    overflow: hidden;
+
+    .footer-links {
+        padding-top: 40px;
+
+        a {
+            font-size: 0.8rem;
+            margin: 15px 0;
+            opacity: 0.6;
+        }
+    }
+
+    .rights {
+        font-size: 0.875em;
+        padding: 20px 0;
+        opacity: 0.6;
+        color: white;
+        padding-bottom: 40px;
+
+        a {
+            color: hsl(208.67deg 100% 48.82%);
+        }
+    }
+
+    .footer-links:before {
+        content: "";
+        background-image: url(../../public/images/dc-logo-bg.png);
+        position: absolute;
+        background-size: 30%;
+        bottom: 0;
+        left: 20%;
+
+        width: 100%;
+        height: 100%;
+
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.footer-bottom {
+    background-color: hsl(0deg 0% 18.82%);
+    display: flex;
+    color: white;
+    padding: 30px 0;
+
+    .btn {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+        border: 1px solid hsl(209deg 100% 49%);
+        background-color: transparent;
+
+        padding: 0 10px;
+    }
+
+    .social-media {
+        p {
+            font-size: 1.2rem;
+            color: hsl(209deg 100% 49%);
+            padding-right: 10px;
+        }
+
+        li {
+            padding: 0 10px;
+
+            opacity: 0.6;
+
+            svg {
+                font-size: 3rem;
+            }
+        }
+    }
 }
